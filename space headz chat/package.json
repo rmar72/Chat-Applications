@@ -1,0 +1,16 @@
+{
+  "name": "space-headz-chat",
+  "version": "1.0.0",
+  "description": "Node js/ html chat app",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "ws": "^6.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruben S",
+  "license": "ISC"
+}
