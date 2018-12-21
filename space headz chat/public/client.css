@@ -1,0 +1,117 @@
+body{
+  margin-top: 50px;
+  background: #041528;
+  background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+}
+h1{
+  border-bottom: 3px solid white;
+  color: white;
+  font-size: 5.5rem;
+  background-color: rgba(29, 1, 128, 0.3);
+  font-family: Monoton;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px black, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #7d12ff, 0 0 70px #7d12ff, 0 0 80px #7d12ff, 0 0 100px #7d12ff, 0 0 150px #7d12ff;
+  }
+  to {
+    text-shadow: 0 0 5px black, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #7d12ff, 0 0 35px #7d12ff, 0 0 40px #7d12ff, 0 0 50px #7d12ff, 0 0 75px #7d12ff;
+  }
+}
+
+#app{
+  text-align: center;
+}
+#winchat{
+  border: 2px solid white;
+  height: 33vh;
+  overflow: auto;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+
+#msg-list{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+}
+#msg-list li{
+  background:#7d12ff;
+  color: white;
+  height: 60px;
+  padding: 0px 0px 0px 10px;
+  font-size: 20px;
+}
+#msg-list li:nth-child(2n+1){
+  background:#07cff6;
+  color: black;
+}
+
+#msg-list li > h4,p{
+  display: inline-block;
+}
+#msg-list li > h4{
+  font-size: 35px;
+  font-family: Iceland;
+  margin: 10px 0px 0px 0px;
+  padding: 0px 5px;
+  display: inline-block;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+#msg-list li > p{
+  font-family: Audiowide;
+  font-size: 15px;
+}
+
+
+label[for="username"]{
+  font-size: 50px;
+  padding-inline-start: 10px;
+  padding-right: 5px;
+  border-bottom: 1px solid grey;
+  color: #228DFF;
+  font-family: Iceland;
+
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+#username{
+  margin-bottom: 19px;
+  width: 30%;
+  height: 30px;
+  font-size: 25px;
+  background: lightblue;
+}
+
+#msg{
+  margin-top: 100px;
+  width: 70%;
+  height: 40px;
+  margin: auto 0px;
+  font-size: 25px;
+}
+button{
+  width: 70%;
+  height: 60px;
+  font-size: 25px;
+  color: white;
+  background: #48d5c5;
+}
