@@ -1,6 +1,6 @@
 # Chat-Applications
 
-Compilation of samples of how to create chat applications.
+Compilation of real time chat application samples
 
 [Space Headz Chat](https://github.com/rmar72/Chat-Applications/tree/master/space%20headz%20chat) - Real time chat app using node.js + client technologies
 
