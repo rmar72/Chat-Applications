@@ -1,32 +1,23 @@
 $(() => {
     const socket = io();
-    var user_pic;
+    let user_pic;
 
     $('form').submit(() => {
-        var user = $("#username").val();
-        var msg = $('#message').val();
+        const user = $("#username").val();
+        const msg = $('#message').val();
 
         if(user_pic && user && msg){
             $('#message').css("border", "");
-
-            socket.emit('chat message', 
-            {
-                user_pic,
-                user,
-                msg
-            });
-            
+            socket.emit('chat message', { user_pic, user, msg });
             $('#message').val('');
-        }else{
+        } else {
             $('#message').css("border", "1px solid red");
             alert("missing input(s)")
         }
-        
         return false;
     });
 
     socket.on('chat message', data => {
-        
         $('#messages')
             .append( 
                 $('<li>').append([
@@ -38,22 +29,19 @@ $(() => {
             .scrollTop($("#messages").prop("scrollHeight"));
     });
 
-    ///////// uploading file
+    // uploading a file a la jquery
     $("#photouploader").bind('change', previewFile);
 
     function previewFile() {
-        var preview = document.querySelector('img');
-        var file    = document.querySelector('input[type=file]').files[0];
-        var reader  = new FileReader();
-    
-        reader.addEventListener("load", function () {
-            user_pic = reader.result;
-            preview.src = reader.result;
-        }, false);
-    
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
+        const file = $("input[type=file]")[0].files[0];
+        const reader  = new FileReader();
 
+        reader.onload =  function(){
+            user_pic = reader.result;
+            $('img').attr('src', reader.result );
+        }
+    
+        if (file)
+            reader.readAsDataURL(file);
+    }
 });
