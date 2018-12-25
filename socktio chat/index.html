@@ -8,23 +8,25 @@
   <body>
 
     <main>
-
-      <div id="controls">
-        <label for="username">Choose your username</label>
-        <input type="text" id="username" />
-
-        <h4>Photo Uploader</h4>
-        <img src="#" height="100" alt="Image preview...">
+      <section id="winchat">
+        <ul id="messages"></ul>
+        <form action="">
+          <input id="message" autocomplete="off" /><button>Send</button>
+        </form>
+      </section>
+      
+      
+      <section id="controls">
+        <label for="username">Enter Username</label>
+        <input type="text" id="username" placeholder="ex. Ace Ventura" />
+        <br/>
+        <br/>
+        <h4>Upload Photo</h4>
+        <img src="#" height="100" width="150" alt="Image preview...">
         <br/>
         <input id="photouploader" type="file">
-      </div>
-
-      <ul id="messages"></ul>
-      <form action="">
-        <input id="message" autocomplete="off" /><button>Send</button>
-      </form>
+      </section>
     </main>
-      
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>

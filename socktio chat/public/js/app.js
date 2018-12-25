@@ -19,7 +19,7 @@ $(() => {
         $('#messages')
             .append( 
                 $('<li>').append([
-                    $("<img/>",{"src": data.user_pic, "class": "list-item-img"}),
+                    $("<img/>",{"src": data.user_pic, "class": "list-item-img", "alt": "user image"}),
                     $("<h5/>", {"text": data.user}),
                     $("<p/>", {"text": data.msg})
                 ])
