@@ -1,0 +1,53 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body {
+    font-family: 'Tajawal', sans-serif;    
+    background: #5a637b;
+}
+
+#messages {
+    background: rgb(241, 240, 240);
+    list-style-type: none; 
+    margin: 50px auto 0 auto; 
+    padding: 0; 
+    width:50%; 
+    height: 35vh; 
+    border-top: 35px solid #14a4ac;
+    overflow: auto;
+}
+#messages li {
+    padding: 15px 10px;
+}
+#messages li:nth-child(odd) {
+    /* background: rgb(192, 189, 189); */
+    background: #e3e5ee;
+}
+
+form {
+    background: rgb(241, 240, 240);
+    padding: 3px;
+    bottom: 0; 
+    width: 50%; 
+    margin:0 0 0 25%;
+}
+form input {
+    font-family: 'Tajawal', sans-serif; 
+    background: #d1d1dd;
+    color:black;
+    font-size: 20px;
+    border: 0;
+    padding: 10px; 
+    width: 90%;
+    margin-right: .5%;
+}
+form button { 
+    font-weight: bold;
+    width: 9%;
+    /* background: #14a4ac; */
+    background: #716fc2;
+    border: none;
+    padding: 11px;
+}
