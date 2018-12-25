@@ -16,11 +16,6 @@ $(() => {
 
     socket.on('chat message', data => {
         
-        var list_item = `
-            <img src=${data.user_pic} width=50; height=50; />
-            ${data.user}: ${data.msg}
-        `;
-
         $('#messages')
             .append( 
                 $('<li>').append([
@@ -30,14 +25,9 @@ $(() => {
                 ])
             )
             .scrollTop($("#messages").prop("scrollHeight"));
-
-        // $('#messages')
-        //     .append( $('<li>').html(list_item))
-        //     .scrollTop($("#messages").prop("scrollHeight"));
     });
 
- ///////// uploading file
-
+    ///////// uploading file
     $("#photouploader").bind('change', previewFile);
 
     function previewFile() {
@@ -55,8 +45,4 @@ $(() => {
         }
     }
 
-
 });
-
-
-   

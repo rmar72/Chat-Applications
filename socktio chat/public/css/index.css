@@ -13,8 +13,8 @@ body {
     list-style-type: none; 
     margin: 50px auto 0 auto; 
     padding: 0; 
-    width:50%; 
-    height: 35vh; 
+    width: 50%; 
+    height: 55vh; 
     border-top: 35px solid #14a4ac;
     overflow: auto;
 }
@@ -53,6 +53,7 @@ form button {
 }
 
 .list-item-img{
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
 }
