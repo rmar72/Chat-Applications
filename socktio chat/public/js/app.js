@@ -3,14 +3,25 @@ $(() => {
     var user_pic;
 
     $('form').submit(() => {
-        socket.emit('chat message', 
-        {
-            "user_pic": user_pic,
-            "user": $("#username").val(),
-            "msg": $('#message').val()
-        });
+        var user = $("#username").val();
+        var msg = $('#message').val();
+
+        if(user_pic && user && msg){
+            $('#message').css("border", "");
+
+            socket.emit('chat message', 
+            {
+                user_pic,
+                user,
+                msg
+            });
+            
+            $('#message').val('');
+        }else{
+            $('#message').css("border", "1px solid red");
+            alert("missing input(s)")
+        }
         
-        $('#message').val('');
         return false;
     });
 
