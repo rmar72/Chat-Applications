@@ -24,12 +24,23 @@ body {
 #messages li:nth-child(odd) {
     background: #e3e5ee;
 }
-.list-item-img{
+#messages li .list-item-img{
     width: 70px;
     height: 70px;
     border-radius: 100%;
+    margin-top: -55px; 
 }
-
+#messages li h4{
+    font-weight: bold;
+    margin-left: 80px;
+}
+#messages li p{
+    margin-left: 80px; 
+}
+#messages li h6{
+    margin-top: 20px;
+    float: right; 
+}
 
 form {
     display: block; 

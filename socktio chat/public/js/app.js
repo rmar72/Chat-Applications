@@ -8,22 +8,32 @@ $(() => {
 
         if(user_pic && user && msg){
             $('#message').css("border", "");
-            socket.emit('chat message', { user_pic, user, msg });
+
+            let d = new Date();
+            let day = d.toDateString().slice(3, 15);
+            let [h, m]  = d.toString().slice(16, 21).split(":");
+            let date = parseInt(h) > 12 ?
+                                        day + ", " + (parseInt(h)-12 +":"+ m + "PM") :
+                                        day + ", " + (parseInt(h) +":"+ m + "AM");
+
+            socket.emit('chat message', { user_pic, user, msg, date });
             $('#message').val('');
+
         } else {
             $('#message').css("border", "1px solid red");
-            alert("missing input(s)")
+            alert("missing input(s)");
         }
         return false;
     });
 
     socket.on('chat message', data => {
         $('#messages')
-            .append( 
+            .append(
                 $('<li>').append([
-                    $("<img/>",{"src": data.user_pic, "class": "list-item-img", "alt": "user image"}),
-                    $("<h5/>", {"text": data.user}),
-                    $("<p/>", {"text": data.msg})
+                    $("<h4/>", {"text": data.user}),
+                    $("<p/>", {"text": data.msg}),
+                    $("<img/>", {"src": data.user_pic, "class": "list-item-img", "alt": "user image"}),
+                    $("<h6/>", {"text": data.date})
                 ])
             )
             .scrollTop($("#messages").prop("scrollHeight"));
@@ -36,12 +46,18 @@ $(() => {
         const file = $("input[type=file]")[0].files[0];
         const reader  = new FileReader();
 
+        // The FileReader.onload property contains an event handler executed when the
+        // load event is fired, when content read with readAsArrayBuffer, readAsBinaryString, readAsDataURL
+        // or readAsText is available - https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload
         reader.onload =  function(){
+            console.log("1"); // logs 2nd
             user_pic = reader.result;
-            $('img').attr('src', reader.result );
+            $('img').attr('src', reader.result);
         }
     
-        if (file)
+        if (file){ // when file is ready, prep to run onload ^
+            console.log("2"); // logs 1st
             reader.readAsDataURL(file);
+        }
     }
 });
