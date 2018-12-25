@@ -6,13 +6,23 @@
     <link href="https://fonts.googleapis.com/css?family=Tajawal:500" rel="stylesheet">    
   </head>
   <body>
+
+    <main>
       <label for="username">Choose your username</label>
       <input type="text" id="username" />
+
+      <div>
+          <h4>Photo Uploader</h4>
+          <input id="photouploader" type="file"><br>
+          <img src="" height="50" alt="Image preview...">
+        </div>
 
       <ul id="messages"></ul>
       <form action="">
         <input id="message" autocomplete="off" /><button>Send</button>
       </form>
+    </main>
+      
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
