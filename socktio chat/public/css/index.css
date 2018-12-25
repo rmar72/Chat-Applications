@@ -11,7 +11,7 @@ body {
 #messages {
     background: rgb(241, 240, 240);
     list-style-type: none; 
-    margin: 50px auto 0 auto; 
+    margin: 15px auto 0 auto; 
     padding: 0; 
     width: 50%; 
     height: 55vh; 
@@ -56,4 +56,19 @@ form button {
     width: 70px;
     height: 70px;
     border-radius: 100%;
+}
+
+#controls{
+    border-top: 15px solid #14a4ac;
+    display: inline-block;
+    margin-left: 35%;
+    margin-top: 20px;
+    background: #394058;
+    color: white;
+    height: 200px;
+
+}
+
+#controls > img{
+    margin-left: 30%;
 }
