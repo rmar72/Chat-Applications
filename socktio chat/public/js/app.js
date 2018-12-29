@@ -10,12 +10,7 @@ $(() => {
         if(user_pic && user && msg){
             $('#message').css("border", "");
 
-            let d = new Date();
-            let day = d.toDateString().slice(3, 15);
-            let [h, m]  = d.toString().slice(16, 21).split(":");
-            let date = parseInt(h) > 12 ?
-                                        day + ", " + (parseInt(h)-12 +":"+ m + "PM") :
-                                        day + ", " + (parseInt(h) +":"+ m + "AM");
+            let date = getDate();
 
             socket.emit('chat message', { user_pic, user, msg, date });
             $('#message').val('');
@@ -41,8 +36,18 @@ $(() => {
             .scrollTop($("#messages").prop("scrollHeight"));
     });
 
+    // date function
+    function getDate(){
+        let date = new Date();
+        let day = date.toDateString().slice(3, 15);
+        let [h, m]  = date.toString().slice(16, 21).split(":");
+        if(h == 0) h = 12;
+        return parseInt(h) > 12 ?
+                                day + ", " + (parseInt(h)-12 +":"+ m + "PM") :
+                                day + ", " + (parseInt(h) +":"+ m + "AM");
+    }
 
-    ///////// uploading file
+    // uploading file
     $("#photouploader").on('change', startRead);
 
     function startRead() {
