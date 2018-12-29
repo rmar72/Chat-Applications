@@ -7,5 +7,5 @@ Application using the SocketIO JS library for server & client support, enabling 
 ##### Back End:
 - Node.js Express + SocketIO
 ##### Front End: 
-- HTML5/CSS3 + SocketIO & JQuery
+- HTML5/CSS3 + SocketIO + JQuery + FileReader API
 
